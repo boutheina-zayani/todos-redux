@@ -5,7 +5,7 @@ const initialState={
 };
  const Reducer =(state =initialState,action)=>{
      switch (action.type) {
-        case HANDLEADD: return {...state,todos:[...state.todos,{id:Math.random,Description:action.payload,isDone:false}]}
+        case HANDLEADD: return  {...state,todos:[...state.todos,{id:Math.random,Description:action.payload,isDone:false}]}
         case HANDLEDELETE: return {...state,todos:state.todos.filter(el=>el.id !== action.payload)}
         case HANDLEDONE: return {...state,todos:state.todos.map(el=>el.id == action.payload ? {...el,isDone:!el.isDone}:el)}
         case HANDLEEDIT: return {...state,todos:state.todos.map(el=>el.id=== action.id ? {...el,Description:action.payload}: el)}
